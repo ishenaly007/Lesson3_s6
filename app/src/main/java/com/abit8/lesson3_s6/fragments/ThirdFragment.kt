@@ -31,5 +31,11 @@ class ThirdFragment : Fragment() {
         binding.recycler.adapter = adapter
         binding.recycler.layoutManager = LinearLayoutManager(activity)
         adapter.updateList(list)
+<<<<<<< HEAD
+=======
+
+
+        println("что то там добавили")
+>>>>>>> 62af5e7 (Initial commit)
     }
 }
