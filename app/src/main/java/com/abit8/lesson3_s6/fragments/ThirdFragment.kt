@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.abit8.lesson3_s6.databinding.FragmentThirdBinding
 import com.abit8.lesson3_s6.viewmodel.MyViewModel
@@ -18,17 +17,17 @@ class ThirdFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentThirdBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModel = ViewModelProvider(requireActivity()).get(MyViewModel::class.java)
+        viewModel = ViewModelProvider(requireActivity())[MyViewModel::class.java]
 
-        viewModel!!.item.observe(viewLifecycleOwner, Observer {
+        viewModel!!.item.observe(viewLifecycleOwner) {
             binding.tvHistoryItem.text = it.toString()
-        })
+        }
     }
 }

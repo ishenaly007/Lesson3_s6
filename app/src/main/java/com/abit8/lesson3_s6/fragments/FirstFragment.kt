@@ -11,27 +11,25 @@ import com.abit8.lesson3_s6.viewmodel.MyViewModel
 
 
 class FirstFragment : Fragment() {
-    private lateinit var binding: FragmentFirstBinding
-    private lateinit var viewModel: MyViewModel
+    private var binding: FragmentFirstBinding? = null
+    private var viewModel: MyViewModel? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentFirstBinding.inflate(inflater, container, false)
-        return binding.root
+        return binding!!.root
     }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModel = ViewModelProvider(requireActivity()).get(MyViewModel::class.java)
+        viewModel = ViewModelProvider(requireActivity())[MyViewModel::class.java]
 
-        binding.btnPlus.setOnClickListener {
-            viewModel.updateCount()
+        binding?.btnPlus?.setOnClickListener {
+            viewModel!!.updateCount()
         }
-
-        binding.btnMinus.setOnClickListener {
-            viewModel.updateCount2()
+        binding?.btnMinus?.setOnClickListener {
+            viewModel!!.updateCount2()
         }
     }
 }
