@@ -27,11 +27,11 @@ class FirstFragment : Fragment() {
         viewModel = ViewModelProvider(requireActivity()).get(MyViewModel::class.java)
 
         binding.btnPlus.setOnClickListener {
-            viewModel.updateCount("+")
+            viewModel.updateCount()
         }
 
         binding.btnMinus.setOnClickListener {
-            viewModel.updateCount2("-")
+            viewModel.updateCount2()
         }
     }
 }

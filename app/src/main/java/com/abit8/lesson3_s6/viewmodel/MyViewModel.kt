@@ -17,15 +17,15 @@ open class MyViewModel : ViewModel() {
         items.value = ""
     }
 
-    fun updateCount(itemm:String) {
+    fun updateCount() {
         counts.value = count.value?.plus(1)
         val currentHistory = items.value ?: ""
-        items.value = "$currentHistory\n$itemm"
+        items.value = "$currentHistory\n+"
     }
 
-    fun updateCount2(itemm: String) {
+    fun updateCount2() {
         counts.value = count.value?.minus(1)
         val currentHistory = items.value ?: ""
-        items.value = "$currentHistory\n$itemm"
+        items.value = "$currentHistory\n+"
     }
 }
