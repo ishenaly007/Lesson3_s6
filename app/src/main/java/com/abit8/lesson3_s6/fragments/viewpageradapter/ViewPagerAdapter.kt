@@ -1,4 +1,4 @@
-package com.abit8.lesson3_s6.viewpager
+package com.abit8.lesson3_s6.fragments.viewpageradapter
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager

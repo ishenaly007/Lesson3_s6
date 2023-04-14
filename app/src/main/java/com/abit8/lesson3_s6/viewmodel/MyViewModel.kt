@@ -6,29 +6,26 @@ import androidx.lifecycle.ViewModel
 
 open class MyViewModel : ViewModel() {
 
-    private val _historyList = MutableLiveData<List<String>>()
-    val historyList: LiveData<List<String>> = _historyList
-
     private val counts = MutableLiveData<Int>()
-    val count: LiveData<Int>
-        get() = counts
+    val count: LiveData<Int> = counts
+
+    private val items = MutableLiveData<String>()
+    val item: LiveData<String> = items
 
     init {
         counts.value = 0
-        _historyList.value = listOf()
+        items.value = ""
     }
 
-    fun updateCount() {
+    fun updateCount(itemm:String) {
         counts.value = count.value?.plus(1)
+        val currentHistory = items.value ?: ""
+        items.value = "$currentHistory\n$itemm"
     }
 
-    fun updateCount2() {
+    fun updateCount2(itemm: String) {
         counts.value = count.value?.minus(1)
-    }
-
-    //----------------------------------------------------
-    fun addToHistory(item: String) {
-        val currentList = _historyList.value ?: listOf()
-        _historyList.value = currentList.plus(item)
+        val currentHistory = items.value ?: ""
+        items.value = "$currentHistory\n$itemm"
     }
 }

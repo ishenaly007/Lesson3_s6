@@ -5,9 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import com.abit8.lesson3_s6.R
 import com.abit8.lesson3_s6.databinding.FragmentFirstBinding
 import com.abit8.lesson3_s6.viewmodel.MyViewModel
 
@@ -29,16 +27,11 @@ class FirstFragment : Fragment() {
         viewModel = ViewModelProvider(requireActivity()).get(MyViewModel::class.java)
 
         binding.btnPlus.setOnClickListener {
-            viewModel.updateCount()
-            viewModel.addToHistory("+")
+            viewModel.updateCount("+")
         }
 
         binding.btnMinus.setOnClickListener {
-            viewModel.updateCount2()
-            viewModel.addToHistory("-")
+            viewModel.updateCount2("-")
         }
-
-
     }
-
 }

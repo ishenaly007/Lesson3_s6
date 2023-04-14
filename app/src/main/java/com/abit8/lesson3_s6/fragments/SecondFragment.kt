@@ -1,13 +1,12 @@
 package com.abit8.lesson3_s6.fragments
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import com.abit8.lesson3_s6.R
 import com.abit8.lesson3_s6.databinding.FragmentSecondBinding
 import com.abit8.lesson3_s6.viewmodel.MyViewModel
 
@@ -31,8 +30,4 @@ class SecondFragment : Fragment() {
             binding.tvCount.text = it.toString()
         })
     }
-
-    /*fun updateCount(count: Int) {
-        binding.tvCount.text = count.toString()
-    }*/
 }

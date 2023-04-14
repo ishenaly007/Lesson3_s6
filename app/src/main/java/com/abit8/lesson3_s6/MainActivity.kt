@@ -6,7 +6,7 @@ import com.abit8.lesson3_s6.databinding.ActivityMainBinding
 import com.abit8.lesson3_s6.fragments.FirstFragment
 import com.abit8.lesson3_s6.fragments.SecondFragment
 import com.abit8.lesson3_s6.fragments.ThirdFragment
-import com.abit8.lesson3_s6.viewpager.ViewPagerAdapter
+import com.abit8.lesson3_s6.fragments.viewpageradapter.ViewPagerAdapter
 import com.google.android.material.tabs.TabLayoutMediator
 
 class MainActivity : AppCompatActivity() {
